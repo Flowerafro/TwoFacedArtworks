@@ -1,0 +1,194 @@
+/* ------------------------------------------ */
+/* ---- STYLE FOR TABLET/DESKTOP VIEW ------- */
+/* ------------------------------------------ */
+
+.about__section {
+    background: url("../images/black.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    border-radius: 0 50px 0 50px;
+
+    .about__container {
+        @include flex_col_align;
+
+        // title + image
+        .about__box {
+            @include flex_space_even;
+            @include flex_a_center;
+
+            padding: 2rem;
+            width: min(96%, 1000px);
+
+            // title
+            .title__container {
+                display: flex;
+                flex-direction: column;
+                color: var(--white);
+                text-align: end;
+                max-width: 400px;
+
+                .title__box {
+                    margin: 2rem 0;
+                    @include flex_col;
+
+                    h2 {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        margin-bottom: 1rem;
+                        letter-spacing: 0.1rem;
+                    }
+
+                    h3 {
+                        font-style: italic;
+                        letter-spacing: 2px;
+                        line-height: 2rem;
+                    }
+
+                    h3,
+                    p {
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        line-height: 2.5rem;
+                    }
+
+                    a {
+                        color: var(--white);
+                        text-decoration: none;
+                        line-height: 2rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: var(--red);
+                            transition: all 0.3s ease-in-out;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+
+                hr {
+                    border: red solid 1px;
+                }
+            }
+
+            // image
+            .about__img {
+                display: flex;
+                justify-content: center;
+                object-fit: cover;
+
+                img {
+                    width: 350px;
+                    height: auto;
+                    border-radius: 50%;
+
+                    &:hover {
+                        transform: rotate(360deg);
+                        transition: all 2s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------ */
+/* ------ STYLE FOR IPAD VIEW 1024x1366 ----- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    .about__section {
+        .about__container {
+            .about__box {
+                width: min(96%, 1024px);
+
+                .title__container {
+                    max-width: 350px;
+
+                    .title__box {
+                        margin: 1.5rem 1rem;
+
+                        h2 {
+                            font-size: 1.8rem;
+                        }
+
+                        h3,
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    hr {
+                        width: 95%;
+                    }
+                }
+
+                .about__img {
+                    img {
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------ */
+/* -------- STYLE FOR MOBILE VIEW ----------- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 640px) {
+    .about__section {
+        padding: 0;
+
+        .about__container {
+            margin: 0 auto;
+            padding-top: 0.5rem;
+
+            // title + image
+            .about__box {
+                flex-direction: column-reverse;
+                padding: 0.2rem;
+                width: min(96%, 400px);
+
+                // title
+                .title__container {
+                    text-align: center;
+
+                    .title__box {
+                        margin: 2rem 0;
+                        display: flex;
+                        flex-direction: column;
+
+                        h2 {
+                            font-size: 2rem;
+                            margin-bottom: 0.7rem;
+                        }
+
+                        h3,
+                        p {
+                            font-size: 1.1rem;
+                            line-height: 1.1;
+                        }
+
+                        a {
+                            color: var(--white);
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                // image
+                .about__img {
+                    img {
+                        width: min(96%, 200px);
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

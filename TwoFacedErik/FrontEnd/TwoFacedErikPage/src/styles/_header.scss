@@ -1,0 +1,180 @@
+/* ------------------------------------------ */
+/* ---- STYLE FOR TABLET/DESKTOP VIEW ------- */
+/* ------------------------------------------ */
+
+header {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: radial-gradient(circle, var(--red), #a40000,);
+    transition: all .3s ease-in-out;
+
+    @include flex_col_align;
+
+    .logo__container {
+        width: 100%;
+
+        .logo__link {
+            @include flex_j_center;
+          
+            .logo {
+                width: min(95%, 350px);
+                height: auto;
+                object-fit: contain;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .nav__bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        nav {
+            width: 40%;
+
+            ul {
+                @include flex_j_center;
+                @include flex_space_even;
+                a {
+                    color: var(--white);
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: all 0.5s ease-in-out;
+                
+                    &:hover {
+                        transform: scale(1.1);
+                        color: var(--black);
+                    }
+                    
+                }
+            }
+        }
+        .social__links {
+            width: 40%;
+            @include flex_j_center;
+            @include flex_space_even;
+
+            .links {
+                color: var(--white);
+                font-size: 1.2rem;
+                font-weight: 700;
+                text-decoration: none;
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                transform: scale(1.1);
+                color: var(--black);
+                }
+            }
+        }
+    }
+
+    .nav__bar a.active {
+        color: var(--black);
+        border-bottom: var(--black) 3px solid;
+    }
+}
+
+
+
+
+/* ------------------------------------------ */
+/* ------ STYLE FOR IPAD VIEW 1024x1366 ----- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    header {
+        .logo__container {   
+            width: 100%; 
+            .logo__link {    
+                .logo {
+                    width: min(95%, 300px);
+                }
+            }
+        }
+        .nav__bar {
+            nav {
+                ul {
+                  a {
+                    font-size: 1.3rem;
+                  }
+                }
+            }
+            .social__links {
+                .links {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------------------------------ */
+/* -------- STYLE FOR MOBILE VIEW ----------- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 640px) {
+    header {    
+       padding: 1rem 0;
+        padding-bottom: 0;
+        .logo__container {
+            width: 100%;
+            
+            .logo__link {
+                
+                .logo {
+                    width: min(95%, 250px);
+                }
+            }
+        }
+    
+        .nav__bar {
+            width: 100%;
+            @include flex_col;
+    
+            nav {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                ul {
+                    a {
+                        font-size: 0.8rem;
+                    
+                        &:hover {
+                            transform: scale(1.1);
+                            color: var(--black);
+                        }           
+                    }
+                }
+            }
+            .social__links {
+                width: 100%;
+                
+                .links {
+                    font-size: 1rem;
+                    color: var(--white);
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+    
+        .nav__bar a.active {
+            color: var(--black);
+            border-bottom: var(--black) 3px solid;
+        }
+    }
+    }
+       

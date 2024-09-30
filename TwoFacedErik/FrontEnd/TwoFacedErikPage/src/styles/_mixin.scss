@@ -1,0 +1,75 @@
+/* ------------------------------------------ */
+/* --------- Positioning mixins ------------- */
+/* ------------------------------------------ */
+
+@mixin flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex_col-rev {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@mixin flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex_col_align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex_col_cent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex_j_center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex_a_center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex_center_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex_start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex_end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin flex_a_end {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+@mixin flex_space_even {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin flex_space_bet {
+    display: flex;
+    justify-content: space-between;
+}
+

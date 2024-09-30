@@ -1,0 +1,206 @@
+/* ------------------------------------------ */
+/* -------- STYLE FOR DESKTOP VIEW ---------- */
+/* ------------------------------------------ */
+
+.not__found {
+    @include flex_center_center;
+    height: 50vh;
+    background-color: var(--black);
+    color: var(--red);
+    font-size: 2rem;
+}
+
+.artwork__section {
+    background-color: var(--white);
+    max-width: 1000px;
+    @include flex_center_center;
+
+    .artwork__btns {
+        width: min(96%, 1000px);
+        height: auto;
+
+        @include flex_space_bet;
+
+        position: absolute;
+        top: 50%;
+        z-index: 1000;
+
+        .art__btn {
+            border: none;
+            background-color: transparent;
+            color: var(--black);
+            cursor: pointer;
+            font-size: 2rem;
+
+            transition: all .3s ease-in-out;
+
+            &:active {
+                color: var(--red);
+            }
+
+            &:hover {
+                border-color: var(--red);
+                color: var(--red);
+                fill: var(--red);
+            }
+        }
+    }
+
+    .artwork__container {
+        position: relative;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.50);
+
+        .artwork__box {
+            display: flex;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            color: var(--white);
+            background-color: var(--red);
+            position: relative; // Add position relative to the box
+
+            &:hover {
+                transform: scale(1.02);
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .escape__btn {
+                position: absolute;
+                top: -15px;
+                left: -10px;
+                z-index: 1000;
+
+                .esc__btn {
+                    border: none;
+                    background-color: transparent;
+                    color: var(--black);
+                    cursor: pointer;
+                    font-size: 2.5rem;
+
+                    &:hover {
+                        color: var(--red);
+                        transition: transform 0.5s ease-in-out;
+                    }
+                }
+            }
+
+            .artwork__img {
+                width: 70%;
+                height: auto;
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.0);
+                    transition: transform 0.5s ease-in-out;
+                }
+            }
+
+            .artwork__info {
+                @include flex_col_cent;
+                width: 200px;
+                padding: 1rem;
+
+                .artwork__name {
+                    font-size: 2rem;
+                    text-wrap: wrap;
+                }
+
+                .artwork__name__info {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+/* ------------------------------------------ */
+/* ------ STYLE FOR IPAD VIEW 1024x1366 ----- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    .artwork__section {
+        .artwork__btns {
+            width: min(96%, 900px);
+            height: auto;
+        }
+
+        .artwork__container {
+            .artwork__box {
+                max-width: 600px;
+                flex-direction: row;
+
+                .escape__btn {
+                    top: -20px;
+                    left: -15px;
+
+                    .esc__btn {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .artwork__img {
+                    width: 70%;
+                    height: auto;
+                }
+
+                .artwork__info {
+                    text-align: center;
+
+                    .artwork__name {
+                        font-size: 1.5rem;
+                    }
+
+                    .artwork__name__info {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ------------------------------------------ */
+/* -------- STYLE FOR MOBILE  640px --------- */
+/* ------------------------------------------ */
+
+@media screen and (max-width: 640px) {
+    .artwork__section {
+        .artwork__btns {
+            width: min(96%, 700px);
+            height: auto;
+        }
+
+        .artwork__container {
+            .artwork__box {
+                max-width: 350px;
+                height: auto;
+                flex-direction: column;
+
+                .escape__btn {
+                    top: -15px;
+                    left: -15px;
+
+                    .esc__btn {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .artwork__img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                .artwork__info {
+                    .artwork__name {
+                        font-size: 1.5rem;
+                    }
+
+                    .artwork__name__info {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
