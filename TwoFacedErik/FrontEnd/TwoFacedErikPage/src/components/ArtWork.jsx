@@ -1,20 +1,12 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchArtworks } from '../sanity/artworkServices.js';
+import { artworks } from '../data/data.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function ArtWork() {
-  // States to hold artworks data and current artwork ID
-  const [artworks, setArtworks] = useState([]);
+  // State to hold current artwork ID
   const [currentId, setCurrentId] = useState(null);
-
-  // Fetch artworks data on component mount
-  useEffect(() => {
-    fetchArtworks().then((data) => {
-      setArtworks(data);
-    });
-  }, []);
 
   // Get slug from URL
   const { slug } = useParams();
@@ -93,7 +85,7 @@ export default function ArtWork() {
                 <button onClick={() => navigate("/")} className="esc__btn"><FontAwesomeIcon icon={faCircleXmark} /></button>
               </div>
               <img
-                src={currentArtwork.watermarkImageUrl}
+                src={currentArtwork.watermark || currentArtwork.image}
                 alt={currentArtwork.name}
                 effect='blur'
                 className="artwork__img"

@@ -18,7 +18,7 @@ export const about = [
         name: "Erik",
         role: "Artist/ Illustrator / Designer ",
         place: "Norway",
-        image: facetwofacelogo, 
+        image: facetwofacelogo,
         alt: "TwoFacedArtworks",
         mail: "mailto:erikhenriksen1986@gmail.com",
         IG: "https://www.instagram.com/twofacedartwork/",
@@ -53,7 +53,7 @@ export const social = [
 /* ------------------------------------------ */
 /* ---------------- ARTWORKS ---------------- */
 /* ------------------------------------------ */
-/*   -- moved to sanity/sanity/schemaTypes/index.js 
+// Artworks data using local images
 export const artworks = [
     {
         id: 1,
@@ -345,7 +345,7 @@ export const artworks = [
         watermark: "/src/images/48IntheBlack_watermark.jpg",
         title: "In the Black",
     },
-]; */
+];
 
 export const clients = [
     {
@@ -354,7 +354,7 @@ export const clients = [
         image: "/src/images/Malstrom.png",
         url: "https://malstromfestivalen.no/",
         time: "XXXX -",
-        description: "Head of design, illustrations, art and logos for festival" 
+        description: "Head of design, illustrations, art and logos for festival"
     },
     {
         id: 2,
@@ -362,7 +362,7 @@ export const clients = [
         image: "/src/images/Humbar.png",
         url: "https://www.facebook.com/humbarhonefoss/",
         time: "XXXX",
-        description: "Created a murial for Humbar in Hønefoss" 
+        description: "Created a murial for Humbar in Hønefoss"
     },
     {
         id: 3,
@@ -370,7 +370,7 @@ export const clients = [
         image: "/src/images/ShotAtDawn.png",
         url: "https://www.platekompaniet.no/musikk/vinyl/metal/shot-at-dawn-legendary-ep-vinyl",
         time: "2015",
-        description: "Album cover design"  
+        description: "Album cover design"
     },
 ]
 
